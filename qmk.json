@@ -4,6 +4,7 @@
         ["crkbd/rev1", "geewiz"],
         ["boardsource/lulu/rp2040", "geewiz"],
         ["fjlabs/polaris", "geewiz"],
-        ["acekeyboard/titan60", "geewiz"]
+        ["acekeyboard/titan60", "geewiz"],
+        ["tkc/m0lly", "geewiz"]
     ]
 }
