@@ -48,6 +48,7 @@ enum layer_names {
 #define ENT_MED LT(_MEDIA, KC_ENT)
 #define ESC_MED LT(_MEDIA, KC_ESC)
 #define ESC_NAV LT(_NAVI , KC_ESC)
+#define DEL_SYM LT(_SYMBOL, KC_DEL)
 #define SPC_SYM LT(_SYMBOL, KC_SPC)
 #define TAB_MSE LT(_MOUSE, KC_TAB)
 #define TAB_NAV LT(_NAVI, KC_TAB)
