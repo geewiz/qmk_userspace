@@ -16,7 +16,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* |--------+--------+--------+--------+--------+--------|--------. .--------|--------+--------+--------+--------+--------+--------| */
      XXXXXXX, KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   , KC_MUTE,   KC_HOME, KC_N   , KC_M   , KC_COMM, KC_DOT , KC_SLSH, XXXXXXX, \
 /* |--------+--------+--------+--------+--------+--------/-------/   \-------\--------+--------+--------+--------+--------+--------| */
-                              XXXXXXX, KC_LGUI, LY_NAVI, KC_LSFT,       KC_SPC , LY_SYMB, KC_RALT, XXXXXXX \
+                              LY_MOUS, KC_LGUI, LY_NAVI, KC_LSFT,       KC_SPC , LY_SYMB, KC_RALT, LY_MEDI \
 /*                          |--------+--------+--------|--------/     \--------|--------+--------+--------|                          */
   ),
 
@@ -86,7 +86,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* |--------+--------+--------+--------+--------+--------|--------. .--------|--------+--------+--------+--------+--------+--------| */
      _______, U_UND  , U_CUT  , U_CPY  , U_PST  , XXXXXXX, XXXXXXX,   XXXXXXX, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R, XXXXXXX, XXXXXXX, \
 /* |--------+--------+--------+--------+--------+--------/-------/   \-------\--------+--------+--------+--------+--------+--------| */
-                              XXXXXXX, XXXXXXX, XXXXXXX, _______,       KC_BTN1, KC_BTN3, KC_BTN2, XXXXXXX \
+                              _______, XXXXXXX, XXXXXXX, XXXXXXX,       KC_BTN1, KC_BTN3, KC_BTN2, XXXXXXX \
 /*                          |--------+--------+--------|--------/     \--------|--------+--------+--------|                          */
   ),
 
@@ -100,7 +100,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* |--------+--------+--------+--------+--------+--------|--------. .--------|--------+--------+--------+--------+--------+--------| */
      _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX, XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX, XXXXXXX, \
 /* |--------+--------+--------+--------+--------+--------/-------/   \-------\--------+--------+--------+--------+--------+--------| */
-                              XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,       _______, XXXXXXX, XXXXXXX, XXXXXXX \
+                              XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,       XXXXXXX, XXXXXXX, XXXXXXX, _______ \
 /*                          |--------+--------+--------|--------/     \--------|--------+--------+--------|                          */
   ),
 
