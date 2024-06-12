@@ -15,6 +15,7 @@ enum keycodes {
 
 enum layer_names {
   _DEFAULT = 0,
+  _COLEMAK,
   _GAME,
   _NAVI,
   _SYMBOL,
@@ -36,6 +37,7 @@ enum layer_names {
 #define LY_DESK MO(_DESKTOP)
 #define LY_ADJT MO(_ADJUST)
 #define TG_GAME TG(_GAME)
+#define TG_COLE TG(_COLEMAK)
 #define TG_DESK TG(_DESKTOP)
 
 // Layer taps
