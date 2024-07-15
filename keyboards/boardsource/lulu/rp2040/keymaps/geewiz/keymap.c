@@ -21,7 +21,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* |--------+--------+--------+--------+--------+--------|--------. .--------|--------+--------+--------+--------+--------+--------| */
      XXXXXXX, KC_Z   , KC_X   , KC_C   , KC_D   , KC_V   , KC_MUTE,   KC_HOME, KC_K   , KC_H   , KC_COMM, KC_DOT , KC_SLSH, XXXXXXX, \
 /* |--------+--------+--------+--------+--------+--------/-------/   \-------\--------+--------+--------+--------+--------+--------| */
-                              LY_MOUS, KC_LGUI, LY_NAVI, KC_LSFT,       KC_SPC , LY_SYMB, KC_RALT, LY_MEDI \
+                              XXXXXXX, XXXXXXX, LY_NAVI, KC_LSFT,       KC_SPC , LY_SYMB, XXXXXXX, XXXXXXX \
 /*                          |--------+--------+--------|--------/     \--------|--------+--------+--------|                          */
   ),
 #else
@@ -35,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* |--------+--------+--------+--------+--------+--------|--------. .--------|--------+--------+--------+--------+--------+--------| */
      XXXXXXX, KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   , KC_MUTE,   KC_HOME, KC_N   , KC_M   , KC_COMM, KC_DOT , KC_SLSH, XXXXXXX, \
 /* |--------+--------+--------+--------+--------+--------/-------/   \-------\--------+--------+--------+--------+--------+--------| */
-                              LY_MOUS, KC_LGUI, LY_NAVI, KC_LSFT,       KC_SPC , LY_SYMB, KC_RALT, LY_MEDI \
+                              XXXXXXX, XXXXXXX, LY_NAVI, KC_LSFT,       KC_SPC , LY_SYMB, XXXXXXX, XXXXXXX \
 /*                          |--------+--------+--------|--------/     \--------|--------+--------+--------|                          */
   ),
 #endif
