@@ -56,36 +56,36 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // Default
         TO(1),              KC_BSPC ,              KC_F10  , KC_F11  , KC_F12  ,    KC_F13 , KC_F14 , KC_F15 ,
         KC_NUM  , KC_PSLS , KC_PAST , KC_PMNS ,    KC_F7   , KC_F8   , KC_F9   ,
-        KC_P7   , KC_P8   , KC_P9   , KC_PPLS ,    KC_F4   , KC_F5   , KC_F6   ,
+        KC_P7   , KC_P8   , KC_P9   , KC_PPLS ,    KC_F4   , KC_F5   , KC_F6   ,    KC_HOME,          KC_MUTE,
         KC_P4   , KC_P5   , KC_P6   ,              KC_F1   , KC_F2   , KC_F3   ,
-        KC_P1   , KC_P2   , KC_P3   , KC_PENT ,              KC_UP   ,
-        KC_P0   ,           KC_PDOT ,              KC_LEFT , KC_DOWN , KC_RGHT ,    KC_HOME, KC_MUTE , KC_NO
-                                                                                 // Sm left, Sm right, Big
+        KC_P1   , KC_P2   , KC_P3   , KC_PENT ,              KC_UP   ,                       KC_NO  ,
+        KC_P0   ,           KC_PDOT ,              KC_LEFT , KC_DOWN , KC_RGHT
     ),
     [_LAYERTWO] = LAYOUT(
         // Davinci Resolve
         TO(2),              DR_UNDO ,              KC_A    , KC_B    , KC_T    ,    DR_PMEDI, DR_PCUT , DR_PEDIT,
         KC_NUM  , KC_PSLS , KC_PAST , DR_RDEL ,    KC_I    , DR_APETL, KC_O    ,
-        KC_P7   , KC_P8   , KC_P9   , KC_SLSH ,    KC_LCBR , DR_SPLIT, KC_RCBR ,
+        KC_P7   , KC_P8   , KC_P9   , KC_SLSH ,    KC_LCBR , DR_SPLIT, KC_RCBR ,    KC_HOME ,           KC_END  ,
         KC_P4   , KC_P5   , KC_P6   ,              KC_J    , KC_K    , KC_L    ,
-        KC_P1   , KC_P2   , KC_P3   , DR_SELCL,              KC_UP   ,
-        KC_P0   ,           KC_PDOT ,              KC_LEFT , KC_DOWN , KC_RGHT ,    KC_HOME, KC_END , KC_NO
+        KC_P1   , KC_P2   , KC_P3   , DR_SELCL,              KC_UP   ,                        KC_NO   ,
+        KC_P0   ,           KC_PDOT ,              KC_LEFT , KC_DOWN , KC_RGHT
     ),
     [_LAYERTHREE] = LAYOUT(
-        TO(3),              KC_BSPC ,              KC_F10  , KC_F11  , KC_F13  ,    KC_F13 , KC_F14 , KC_F15 ,
-        KC_NUM  , KC_PSLS , KC_PAST , KC_PMNS ,    KC_F7   , KC_F8   , KC_F9   ,
-        KC_P7   , KC_P8   , KC_P9   , KC_PPLS ,    KC_F4   , KC_F5   , KC_F6   ,
-        KC_P4   , KC_P5   , KC_P6   ,              KC_F1   , KC_F2   , KC_F3   ,
-        KC_P1   , KC_P2   , KC_P3   , KC_PENT ,              KC_UP   ,
-        KC_P0   ,           KC_PDOT ,              KC_LEFT , KC_DOWN , KC_RGHT ,    KC_HOME, KC_END , KC_NO
+        // Euro Truck Simulator
+        TO(3),              KC_ESC  ,              KC_L    , KC_P    , KC_H    ,    KC_LBRC , KC_RBRC , KC_O   ,
+        KC_E    , KC_B    , KC_SPC  , KC_T    ,    KC_F7   , KC_F8   , KC_F9   ,
+        KC_7    , KC_8    , KC_9    , KC_NO   ,    KC_F4   , KC_F5   , KC_F6   ,    KC_H    ,           KC_END ,
+        KC_4    , KC_5    , KC_6    ,              KC_F1   , KC_F2   , KC_F3   ,
+        KC_1    , KC_2    , KC_3    , KC_ENT  ,              KC_UP   ,                        KC_NO   ,
+        KC_P0   ,           KC_PDOT ,              KC_LEFT , KC_DOWN , KC_RGHT
     ),
     [_LAYERFOUR] = LAYOUT(
         TO(0),              KC_NO   ,              RGB_RMOD, RGB_TOG , RGB_MOD ,    KC_NO   , QK_RBT  , QK_BOOT,
         KC_NO   , KC_NO   , KC_NO   , KC_NO   ,    KC_NO   , KC_NO   , KC_NO   ,
-        WS_7    , WS_8    , WS_9    , KC_NO   ,    KC_NO   , KC_NO   , KC_NO   ,
+        WS_7    , WS_8    , WS_9    , KC_NO   ,    KC_NO   , KC_NO   , KC_NO   ,    RGB_TOG ,           KC_MUTE ,
         WS_4    , WS_5    , WS_6    ,              KC_NO   , KC_NO   , KC_NO   ,
-        WS_1    , WS_2    , WS_3    , KC_NO   ,              KC_UP   ,
-        WS_10   ,           KC_PDOT ,              KC_LEFT , KC_DOWN , KC_RGHT ,    RGB_TOG , KC_MUTE , KC_NO
+        WS_1    , WS_2    , WS_3    , KC_NO   ,              KC_UP   ,                        KC_NO   ,
+        WS_10   ,           KC_PDOT ,              KC_LEFT , KC_DOWN , KC_RGHT
     ),
 };
 
@@ -110,7 +110,7 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
     [_LAYERTHREE] = {
         ENCODER_CCW_CW(KC_PGUP, KC_PGDN),
         ENCODER_CCW_CW(KC_MS_WH_UP, KC_MS_WH_DOWN),
-        ENCODER_CCW_CW(KC_VOLD, KC_VOLU)
+        ENCODER_CCW_CW(KC_MS_L, KC_MS_R)
     },
     [_LAYERFOUR] = {
         ENCODER_CCW_CW(KC_VOLD, KC_VOLU),

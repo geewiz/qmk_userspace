@@ -20,19 +20,19 @@ static void render_status(void) {
     oled_write_P(PSTR("Layer: "), false);
     switch (get_highest_layer(layer_state | default_layer_state)) {
         case _LAYERONE:
-            oled_write_P(PSTR("ONE\n"), false);
+            oled_write_P(PSTR("DEFAULT\n"), false);
             break;
         case _LAYERTWO:
-            oled_write_P(PSTR("TWO\n"), false);
+            oled_write_P(PSTR("RESOLVE\n"), false);
             break;
         case _LAYERTHREE:
-            oled_write_P(PSTR("THREE\n"), false);
+            oled_write_P(PSTR("EURO TRUCK\n"), false);
             break;
         case _LAYERFOUR:
-            oled_write_P(PSTR("FOUR\n"), false);
+            oled_write_P(PSTR("ADJUST\n"), false);
             break;
         default:
-            oled_write_P(PSTR("Undefined\n"), false);
+            oled_write_P(PSTR("???\n"), false);
     }
 
     // Host Keyboard LED Status
