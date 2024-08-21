@@ -72,12 +72,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [_LAYERTHREE] = LAYOUT(
         // Euro Truck Simulator
-        TO(3),              KC_ESC  ,              KC_L    , KC_P    , KC_H    ,    KC_LBRC , KC_RBRC , KC_O   ,
-        KC_E    , KC_B    , KC_SPC  , KC_T    ,    KC_F7   , KC_F8   , KC_F9   ,
-        KC_7    , KC_8    , KC_9    , KC_NO   ,    KC_F4   , KC_F5   , KC_F6   ,    KC_H    ,           KC_END ,
+        TO(3),              KC_ESC  ,              KC_LBRC , KC_F    , KC_RBRC ,    KC_L    , KC_K    , KC_P    ,
+        KC_E    , KC_NO   , KC_SPC  , KC_T    ,    KC_F7   , KC_F8   , KC_F9   ,
+        KC_7    , KC_8    , KC_9    , KC_B    ,    KC_F4   , KC_F5   , KC_F6   ,    KC_B    ,           KC_C   ,
         KC_4    , KC_5    , KC_6    ,              KC_F1   , KC_F2   , KC_F3   ,
         KC_1    , KC_2    , KC_3    , KC_ENT  ,              KC_UP   ,                        KC_NO   ,
-        KC_P0   ,           KC_PDOT ,              KC_LEFT , KC_DOWN , KC_RGHT
+        KC_H    ,           KC_NO   ,              KC_LEFT , KC_DOWN , KC_RGHT
     ),
     [_LAYERFOUR] = LAYOUT(
         TO(0),              KC_NO   ,              RGB_RMOD, RGB_TOG , RGB_MOD ,    KC_NO   , QK_RBT  , QK_BOOT,
