@@ -72,12 +72,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [_LAYERTHREE] = LAYOUT(
         // Euro Truck Simulator
-        TO(3),              KC_ESC  ,              KC_LBRC , KC_F    , KC_RBRC ,    KC_L    , KC_K    , KC_P    ,
-        KC_E    , KC_NO   , KC_SPC  , KC_T    ,    KC_F7   , KC_F8   , KC_F9   ,
-        KC_7    , KC_8    , KC_9    , KC_B    ,    KC_F4   , KC_F5   , KC_F6   ,    KC_B    ,           KC_C   ,
+        TO(3),              KC_ESC  ,              KC_L    , KC_K    , KC_O    ,    KC_P    , KC_NO   , KC_NO  ,
+        KC_E    , KC_SPC  , KC_NO   , KC_T    ,    KC_F7   , KC_F8   , KC_F9   ,
+        KC_7    , KC_8    , KC_9    , KC_I    ,    KC_F4   , KC_F5   , KC_F6   ,    KC_C    ,           KC_R   ,
         KC_4    , KC_5    , KC_6    ,              KC_F1   , KC_F2   , KC_F3   ,
         KC_1    , KC_2    , KC_3    , KC_ENT  ,              KC_UP   ,                        KC_NO   ,
-        KC_H    ,           KC_NO   ,              KC_LEFT , KC_DOWN , KC_RGHT
+        KC_H    ,           KC_NO   ,              KC_LBRC , KC_DOWN , KC_RBRC
     ),
     [_LAYERFOUR] = LAYOUT(
         TO(0),              KC_NO   ,              RGB_RMOD, RGB_TOG , RGB_MOD ,    KC_NO   , QK_RBT  , QK_BOOT,
@@ -108,8 +108,8 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
         ENCODER_CCW_CW(KC_LEFT, KC_RGHT)
     },
     [_LAYERTHREE] = {
-        ENCODER_CCW_CW(KC_PGUP, KC_PGDN),
-        ENCODER_CCW_CW(KC_MS_WH_UP, KC_MS_WH_DOWN),
+        ENCODER_CCW_CW(KC_PGDN, KC_PGUP),
+        ENCODER_CCW_CW(KC_MS_WH_DOWN, KC_MS_WH_UP),
         ENCODER_CCW_CW(KC_MS_L, KC_MS_R)
     },
     [_LAYERFOUR] = {
