@@ -39,6 +39,9 @@ enum layers {
 #define DR_APETL S(KC_F12)  // Append to end of timeline
 #define DR_SELCL S(KC_V)    // Select clip
 
+// ETS2 keycodes
+#define ET_STEA S(KC_TAB)
+
 // System keycodes
 #define WS_1 LGUI(KC_1)
 #define WS_2 LGUI(KC_2)
@@ -72,7 +75,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [_LAYERTHREE] = LAYOUT(
         // Euro Truck Simulator
-        TO(3),              KC_M    ,              KC_L    , KC_K    , KC_O    ,    KC_P    , KC_NO   , KC_NO  ,
+        TO(3),              ET_STEA ,              KC_L    , KC_K    , KC_O    ,    KC_P    , KC_NO   , KC_NO  ,
         KC_E    , KC_SPC  , KC_NO   , KC_T    ,    KC_F7   , KC_F8   , KC_F9   ,
         KC_7    , KC_8    , KC_9    , KC_I    ,    KC_F4   , KC_F5   , KC_F6   ,    KC_C    ,           KC_R   ,
         KC_4    , KC_5    , KC_6    ,              KC_F1   , KC_F2   , KC_F3   ,
