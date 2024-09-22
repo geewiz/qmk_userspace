@@ -8,6 +8,7 @@ SUBS(COMB_UAUML,   SS_RGUI("\"")"A",    KC_Q   , KC_W)
 SUBS(COMB_UOUML,   SS_RGUI("\"")"O",    KC_Q   , KC_F)
 SUBS(COMB_UUUML,   SS_RGUI("\"")"U",    KC_Q   , KC_P)
 SUBS(COMB_SUML,    SS_RGUI("ss"),       KC_Q   , KC_B)
+COMB(COMB_ENT,     KC_ENT,              KC_N   , KC_E   , KC_I   )
 #else
 SUBS(COMB_LAUML,   SS_RGUI("\"")"a",    KC_Z   , KC_X)
 SUBS(COMB_LOUML,   SS_RGUI("\"")"o",    KC_Z   , KC_C)
@@ -16,4 +17,5 @@ SUBS(COMB_UAUML,   SS_RGUI("\"")"A",    KC_Q   , KC_W)
 SUBS(COMB_UOUML,   SS_RGUI("\"")"O",    KC_Q   , KC_E)
 SUBS(COMB_UUUML,   SS_RGUI("\"")"U",    KC_Q   , KC_R)
 SUBS(COMB_SUML,    SS_RGUI("ss"),       KC_Q   , KC_T)
+COMB(COMB_ENT,     KC_ENT,              KC_J   , KC_K   , KC_L   )
 #endif
