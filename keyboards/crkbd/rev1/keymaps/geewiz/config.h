@@ -20,6 +20,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
+#define GEEWIZ_COLEMAK true
+
 #define EE_HANDS
 #define SPLIT_USB_DETECT
 
@@ -29,7 +31,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #    define OLED_DISABLE_TIMEOUT // Prevent matrix_changed triggering oled_on()
 #    define OLED_UPDATE_INTERVAL 50
 #    define OLED_BRIGHTNESS 180
-#    define OLED_FONT_H "keyboards/crkbd/keymaps/geewiz/glcdfont.c"
+#    define OLED_FONT_H "keyboards/crkbd/rev1/keymaps/geewiz/glcdfont.c"
 #endif
 
 #ifdef RGB_MATRIX_ENABLE

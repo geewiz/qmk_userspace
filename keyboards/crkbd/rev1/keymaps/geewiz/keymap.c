@@ -36,6 +36,19 @@ extern rgblight_config_t rgblight_config;
 #endif
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+#if defined(GEEWIZ_COLEMAK)
+  [_DEFAULT] = LAYOUT_split_3x6_3( \
+  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+      U_UMLUE, KC_Q   , KC_W   , KC_F   , KC_P   , KC_B   ,                      KC_J   , KC_L   , KC_U   , KC_Y   , KC_QUOT, KC_UNDS,\
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      U_UMLAE, KC_A   , KC_R   , KC_S   , KC_T   , KC_G   ,                      KC_M   , KC_N   , KC_E   , KC_I   , KC_O   , KC_COLN,\
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      U_UMLOE, KC_Z   , KC_X   , KC_C   , KC_D   , KC_V   ,                      KC_K   , KC_H   , KC_COMM, KC_DOT , KC_SLSH, KC_MINS,\
+  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+                                          LY_NUMB, LY_NAVI, KC_LSFT,    KC_SPC , LY_SYMB, XXXXXXX \
+                                      //`--------------------------'  `--------------------------'
+  ),
+#else
   [_DEFAULT] = LAYOUT_split_3x6_3( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       U_UMLUE, KC_Q   , KC_W   , KC_E   , KC_R   , KC_T   ,                      KC_Y   , KC_U   , KC_I   , KC_O   , KC_P   , KC_UNDS,\
@@ -44,9 +57,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       U_UMLOE, KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   ,                      KC_N   , KC_M   , KC_COMM, KC_DOT , KC_SLSH, KC_MINS,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX, LY_NAVI, KC_LSFT,    KC_SPC , LY_SYMB, XXXXXXX \
+                                          LY_NUMB, LY_NAVI, KC_LSFT,    KC_SPC , LY_SYMB, XXXXXXX \
                                       //`--------------------------'  `--------------------------'
   ),
+    #endif
 
   [_GAME] = LAYOUT_split_3x6_3( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
@@ -74,25 +88,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_SYMBOL] = LAYOUT_split_3x6_3( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      _______, KC_EXLM, KC_AT  , KC_HASH, KC_DLR , KC_PERC,                      KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, _______,\
+      _______, KC_LCBR, KC_AMPR, KC_ASTR, KC_GRV , KC_RCBR,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_PIPE, _______,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      _______, XXXXXXX, KC_LCBR, KC_LBRC, KC_LPRN, KC_GRV ,                      KC_TILD, KC_MINS, KC_PLUS, KC_EQL , XXXXXXX, _______,\
+      _______, KC_LPRN, KC_DLR , KC_PERC, KC_CIRC, KC_RPRN,                      KC_TILD, KC_MINS, KC_PLUS, KC_EQL , XXXXXXX, _______,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      _______, KC_PIPE, KC_RCBR, KC_RBRC, KC_RPRN, XXXXXXX,                      XXXXXXX, KC_UNDS, KC_SCLN, KC_COLN, KC_BSLS, _______,\
+      _______, KC_LBRC, KC_EXLM, KC_AT  , KC_HASH, KC_RBRC,                      XXXXXXX, KC_UNDS, KC_SCLN, KC_COLN, KC_BSLS, _______,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX, LY_ADJT, LY_NUMB,    XXXXXXX, _______, XXXXXXX \
+                                          XXXXXXX, LY_ADJT, XXXXXXX,    XXXXXXX, _______, XXXXXXX \
                                       //`--------------------------'  `--------------------------'
   ),
 
   [_NUMBER] = LAYOUT_split_3x6_3( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX, KC_1   , KC_2   , KC_3   , KC_4   , KC_5   ,                      KC_6   , KC_7   , KC_8   , KC_9   , KC_0   , XXXXXXX,\
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_SLSH, KC_7   , KC_8   , KC_9   , KC_MINS, XXXXXXX,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, OS_LGUI, OS_LALT, OS_LCTL, OS_LSFT, KC_MINS,                      KC_PLUS, OS_LSFT, OS_LCTL, OS_LALT, OS_LGUI, XXXXXXX,\
+      XXXXXXX, OS_LGUI, OS_LALT, OS_LCTL, OS_LSFT, KC_MINS,                      KC_ASTR, KC_4   , KC_5   , KC_6   , KC_PLUS, XXXXXXX,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, KC_COMM, KC_DOT , XXXXXXX, XXXXXXX,\
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, KC_1   , KC_2   , KC_3   , KC_EQL , XXXXXXX,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX, XXXXXXX, _______,    XXXXXXX, _______, XXXXXXX \
+                                          _______, XXXXXXX, XXXXXXX,    KC_BSPC, KC_0   , KC_DOT  \
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -122,13 +136,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_ADJUST] = LAYOUT_split_3x6_3( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      QK_BOOT, KC_F1  , KC_F2  , KC_F3  , KC_F4  , KC_F5  ,                      KC_F6  , KC_F7  , KC_F8  , KC_F9  , KC_F10 , XXXXXXX,\
+      XXXXXXX, KC_F12 , KC_F7  , KC_F8  , KC_F9  , KC_PAUS,                      TG_GAME, RGB_TOG, RGB_MOD, XXXXXXX, XXXXXXX, XXXXXXX,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, QK_BOOT,                      TG_GAME, XXXXXXX, XXXXXXX, RGB_TOG, RGB_MOD, XXXXXXX,\
+      XXXXXXX, KC_F11 , KC_F4  , KC_F5  , KC_F6  , KC_PSCR,                      XXXXXXX, OS_LSFT, OS_LCTL, OS_LALT, OS_LGUI, XXXXXXX,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, KC_F11 , KC_F12 , KC_PAUS, KC_PSCR, KC_SCRL,                      XXXXXXX, RGB_HUI, RGB_SAI, RGB_VAI, RGB_SPI, XXXXXXX,\
+      XXXXXXX, KC_F10 , KC_F1  , KC_F2  , KC_F3  , KC_SCRL,                      XXXXXXX, RGB_HUI, RGB_SAI, RGB_VAI, RGB_SPI, XXXXXXX,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX, _______, XXXXXXX,    XXXXXXX, _______, XXXXXXX \
+                                          XXXXXXX, _______, QK_BOOT,    QK_BOOT, _______, XXXXXXX \
                                       //`--------------------------'  `--------------------------'
   )
 };
