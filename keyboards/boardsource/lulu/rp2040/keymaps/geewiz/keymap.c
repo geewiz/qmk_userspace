@@ -15,7 +15,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* ,-----------------------------------------------------.                   ,-----------------------------------------------------. */
      XXXXXXX, KC_1   , KC_2   , KC_3   , KC_4   , KC_5   ,                     KC_6   , KC_7   , KC_8   , KC_9   , KC_0   , XXXXXXX, \
 /* |--------+--------+--------+--------+--------+--------|                   |--------+--------+--------+--------+--------+--------| */
-     XXXXXXX, KC_Q   , KC_W   , KC_F   , KC_P   , KC_B   ,                     KC_J   , KC_L   , KC_U   , KC_Y   , KC_QUOT   , XXXXXXX, \
+     XXXXXXX, KC_Q   , KC_W   , KC_F   , KC_P   , KC_B   ,                     KC_J   , KC_L   , KC_U   , KC_Y   , KC_QUOT, XXXXXXX, \
 /* |--------+--------+--------+--------+--------+--------|                   |--------+--------+--------+--------+--------+--------| */
      XXXXXXX, KC_A   , KC_R   , KC_S   , KC_T   , KC_G   ,                     KC_M   , KC_N   , KC_E   , KC_I   , KC_O   , XXXXXXX, \
 /* |--------+--------+--------+--------+--------+--------|--------. .--------|--------+--------+--------+--------+--------+--------| */
@@ -128,27 +128,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* ,-----------------------------------------------------.                   ,-----------------------------------------------------. */
      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
 /* |--------+--------+--------+--------+--------+--------|                   |--------+--------+--------+--------+--------+--------| */
-     XXXXXXX, KC_F12 , KC_F7  , KC_F8  , KC_F9  , KC_PAUS,                     TG_GAME, TG_RGB , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
+     XXXXXXX, KC_F12 , KC_F7  , KC_F8  , KC_F9  , KC_PAUS,                     TG_GAME, RGB_TOG, RGB_MOD, XXXXXXX, XXXXXXX, XXXXXXX, \
 /* |--------+--------+--------+--------+--------+--------|                   |--------+--------+--------+--------+--------+--------| */
      XXXXXXX, KC_F11 , KC_F4  , KC_F5  , KC_F6  , KC_PSCR,                     XXXXXXX, OS_LSFT, OS_LCTL, OS_LALT, OS_LGUI, XXXXXXX, \
 /* |--------+--------+--------+--------+--------+--------|--------. .--------|--------+--------+--------+--------+--------+--------| */
-     XXXXXXX, KC_F10 , KC_F1  , KC_F2  , KC_F3  , KC_SCRL, XXXXXXX,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
+     XXXXXXX, KC_F10 , KC_F1  , KC_F2  , KC_F3  , KC_SCRL, XXXXXXX,   XXXXXXX, XXXXXXX, RGB_HUI, RGB_SAI, RGB_VAI, RGB_SPI, XXXXXXX, \
 /* |--------+--------+--------+--------+--------+--------/-------/   \-------\--------+--------+--------+--------+--------+--------| */
                               XXXXXXX, XXXXXXX, _______, QK_BOOT,       QK_BOOT, _______, XXXXXXX, XXXXXXX \
-/*                          |--------+--------+--------|--------/     \--------|--------+--------+--------|                          */
-  ),
-
-  [_RGB] = LAYOUT( \
-/* ,-----------------------------------------------------.                   ,-----------------------------------------------------. */
-     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
-/* |--------+--------+--------+--------+--------+--------|                   |--------+--------+--------+--------+--------+--------| */
-     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, TG_RGB , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
-/* |--------+--------+--------+--------+--------+--------|                   |--------+--------+--------+--------+--------+--------| */
-     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, RGB_TOG, RGB_MOD, XXXXXXX, XXXXXXX, XXXXXXX, \
-/* |--------+--------+--------+--------+--------+--------|--------. .--------|--------+--------+--------+--------+--------+--------| */
-     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX, XXXXXXX, RGB_HUI, RGB_SAI, RGB_VAI, RGB_SPI, XXXXXXX, \
-/* |--------+--------+--------+--------+--------+--------/-------/   \-------\--------+--------+--------+--------+--------+--------| */
-                              XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX \
 /*                          |--------+--------+--------|--------/     \--------|--------+--------+--------|                          */
   ),
 };
