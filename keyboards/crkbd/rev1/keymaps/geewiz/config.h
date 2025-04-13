@@ -36,6 +36,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #ifdef RGB_MATRIX_ENABLE
 #  define RGB_DISABLE_WHEN_USB_SUSPENDED true
+#  undef RGB_MATRIX_MAXIMUM_BRIGHTNESS
 #  define RGB_MATRIX_MAXIMUM_BRIGHTNESS 150
 #  define RGB_MATRIX_STARTUP_MODE RGB_MATRIX_ALPHAS_MODS
 #  define RGB_MATRIX_STARTUP_HUE 85
