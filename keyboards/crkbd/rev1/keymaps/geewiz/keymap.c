@@ -88,7 +88,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_SYMBOL] = LAYOUT_split_3x6_3( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      _______, KC_LCBR, KC_AMPR, KC_ASTR, KC_GRV , KC_RCBR,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_PIPE, _______,\
+      _______, KC_LCBR, KC_AMPR, KC_ASTR, KC_PIPE, KC_RCBR,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_GRV , _______,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       _______, KC_LPRN, KC_DLR , KC_PERC, KC_CIRC, KC_RPRN,                      KC_TILD, KC_MINS, KC_PLUS, KC_EQL , XXXXXXX, _______,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
