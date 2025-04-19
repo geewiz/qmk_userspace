@@ -44,21 +44,27 @@ enum layer_names {
 
 // Layer taps
 #define BSP_NAV LT(_NAVI, KC_BSPC)
-#define BSP_SYM LT(_SYMBOL, KC_BSPC)
-#define DEL_ADJ LT(_ADJUST, KC_DEL)
-#define DEL_NUM LT(_NUMBER, KC_DEL)
-#define DEL_SYM LT(_SYMBOL, KC_DEL)
-#define ENT_ADJ LT(_ADJUST, KC_ENT)
-#define ENT_MED LT(_MEDIA, KC_ENT)
-#define ENT_NUM LT(_NUMBER, KC_ENT)
-#define ENT_SYM LT(_SYMBOL, KC_ENT)
-#define ESC_MED LT(_MEDIA, KC_ESC)
 #define ESC_NAV LT(_NAVI , KC_ESC)
-#define SPC_NUM LT(_NUMBER, KC_SPC)
-#define SPC_SYM LT(_SYMBOL, KC_SPC)
-#define TAB_MSE LT(_MOUSE, KC_TAB)
 #define TAB_NAV LT(_NAVI, KC_TAB)
+#define O_NAV LT(_NAVI, KC_O)
+
+#define BSP_SYM LT(_SYMBOL, KC_BSPC)
+#define DEL_SYM LT(_SYMBOL, KC_DEL)
+#define ENT_SYM LT(_SYMBOL, KC_ENT)
+#define SPC_SYM LT(_SYMBOL, KC_SPC)
 #define TAB_SYM LT(_SYMBOL, KC_TAB)
+
+#define DEL_ADJ LT(_ADJUST, KC_DEL)
+#define ENT_ADJ LT(_ADJUST, KC_ENT)
+
+#define DEL_NUM LT(_NUMBER, KC_DEL)
+#define ENT_NUM LT(_NUMBER, KC_ENT)
+#define SPC_NUM LT(_NUMBER, KC_SPC)
+
+#define ENT_MED LT(_MEDIA, KC_ENT)
+#define ESC_MED LT(_MEDIA, KC_ESC)
+
+#define TAB_MSE LT(_MOUSE, KC_TAB)
 
 // Mod taps
 #define BSP_SFT LSFT_T(KC_BSPC)

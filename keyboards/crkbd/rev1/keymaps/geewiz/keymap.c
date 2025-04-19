@@ -1,7 +1,7 @@
 /*
 Copyright 2019 @foostan
 Copyright 2020 Drashna Jaelre <@drashna>
-Copyright 2021 Jochen Lillich <contact@geewiz.dev>
+Copyright 2025 Jochen Lillich <jochen@lillich.co>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -41,11 +41,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       U_UMLUE, KC_Q   , KC_W   , KC_F   , KC_P   , KC_B   ,                      KC_J   , KC_L   , KC_U   , KC_Y   , KC_QUOT, KC_UNDS,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      U_UMLAE, KC_A   , KC_R   , KC_S   , KC_T   , KC_G   ,                      KC_M   , KC_N   , KC_E   , KC_I   , KC_O   , KC_COLN,\
+      U_UMLAE, KC_A   , KC_R   , KC_S   , KC_T   , KC_G   ,                      KC_M   , KC_N   , KC_E   , KC_I   , O_NAV  , KC_COLN,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       U_UMLOE, KC_Z   , KC_X   , KC_C   , KC_D   , KC_V   ,                      KC_K   , KC_H   , KC_COMM, KC_DOT , KC_SLSH, KC_MINS,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          LY_NUMB, LY_NAVI, KC_LSFT,    KC_SPC , LY_SYMB, XXXXXXX \
+                                          KC_LALT, LY_NUMB, KC_LSFT,    KC_SPC , LY_SYMB, XXXXXXX \
                                       //`--------------------------'  `--------------------------'
   ),
 #else
@@ -76,13 +76,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_NAVI] = LAYOUT_split_3x6_3( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      _______, OS_RGUI, OS_RALT, OS_RCTL, OS_RSFT, KC_RGUI,                      KC_TAB , KC_ESC , SW_WIN , XXXXXXX, CW_TOGG, _______,\
+      _______, OS_RGUI, OS_RALT, OS_RCTL, OS_RSFT, KC_RGUI,                      KC_TAB , KC_ESC , SW_WIN , CW_TOGG, XXXXXXX, _______,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      _______, OS_LGUI, OS_LALT, OS_LCTL, OS_LSFT, KC_LGUI,                      KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, KC_ENT , _______,\
+      _______, OS_LGUI, OS_LALT, OS_LCTL, OS_LSFT, KC_LGUI,                      KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, _______, _______,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       _______, U_UND  , U_CUT  , U_CPY  , U_PST  , KC_INS ,                      KC_HOME, KC_PGDN, KC_PGUP, KC_END , KC_DEL , _______,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX, _______, XXXXXXX,    KC_BSPC, KC_ENT , XXXXXXX \
+                                          XXXXXXX, XXXXXXX, _______,    KC_BSPC, KC_ENT , XXXXXXX \
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -100,13 +100,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_NUMBER] = LAYOUT_split_3x6_3( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, KC_7   , KC_8   , KC_9   , KC_EQL , XXXXXXX,\
+      _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, KC_7   , KC_8   , KC_9   , KC_EQL , _______,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, OS_LGUI, OS_LALT, OS_LCTL, OS_LSFT, KC_MINS,                      KC_MINS, KC_4   , KC_5   , KC_6   , KC_ASTR, XXXXXXX,\
+      _______, OS_LGUI, OS_LALT, OS_LCTL, OS_LSFT, KC_MINS,                      KC_MINS, KC_4   , KC_5   , KC_6   , KC_ASTR, _______,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_PLUS, KC_1   , KC_2   , KC_3   , KC_SLSH, XXXXXXX,\
+      _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_PLUS, KC_1   , KC_2   , KC_3   , KC_SLSH, _______,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          _______, XXXXXXX, XXXXXXX,    KC_BSPC, KC_0   , KC_DOT  \
+                                          XXXXXXX, _______, XXXXXXX,    KC_BSPC, KC_0   , KC_DOT  \
                                       //`--------------------------'  `--------------------------'
   ),
 
