@@ -18,10 +18,11 @@
 #include QMK_KEYBOARD_H
 
 enum layers {
-    _LAYERONE,
-    _LAYERTWO,
-    _LAYERTHREE,
-    _LAYERFOUR,
+    _DEFAULT,
+    _RESOLVE,
+    _SHOTCUT,
+    _TRUCKSIM,
+    _FUNCTION,
 };
 
 #ifdef OLED_ENABLE
@@ -39,6 +40,14 @@ enum layers {
 #define DR_APETL S(KC_F12)  // Append to end of timeline
 #define DR_SELCL S(KC_V)    // Select clip
 
+// Shotcut keycodes
+#define SC_UNDO C(KC_Z)
+#define SC_SKPL A(KC_LEFT) // Skip to previous clip
+#define SC_SKPR A(KC_RIGHT) // Skip to next clip
+#define SC_CUT  C(KC_X)
+#define SC_COPY C(KC_C)
+#define SC_PSTE C(KC_V)
+
 // ETS2 keycodes
 #define ET_STEA S(KC_TAB)
 
@@ -55,35 +64,44 @@ enum layers {
 #define WS_10 LGUI(KC_0)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [_LAYERONE] = LAYOUT(
+    [_DEFAULT] = LAYOUT(
         // Default
-        TO(1),              KC_BSPC ,              KC_F10  , KC_F11  , KC_F12  ,    KC_F13 , KC_F14 , KC_F15 ,
+        TO(_RESOLVE),       KC_BSPC ,              KC_F10  , KC_F11  , KC_F12  ,    KC_F13 , KC_F14 , KC_F15 ,
         KC_NUM  , KC_PSLS , KC_PAST , KC_PMNS ,    KC_F7   , KC_F8   , KC_F9   ,
         KC_P7   , KC_P8   , KC_P9   , KC_PPLS ,    KC_F4   , KC_F5   , KC_F6   ,    KC_HOME,          KC_MUTE,
         KC_P4   , KC_P5   , KC_P6   ,              KC_F1   , KC_F2   , KC_F3   ,
         KC_P1   , KC_P2   , KC_P3   , KC_PENT ,              KC_UP   ,                       KC_NO  ,
         KC_P0   ,           KC_PDOT ,              KC_LEFT , KC_DOWN , KC_RGHT
     ),
-    [_LAYERTWO] = LAYOUT(
+    [_RESOLVE] = LAYOUT(
         // Davinci Resolve
-        TO(2),              DR_UNDO ,              KC_A    , KC_B    , KC_T    ,    DR_PMEDI, DR_PCUT , DR_PEDIT,
+        TO(_SHOTCUT),       DR_UNDO ,              KC_A    , KC_B    , KC_T    ,    DR_PMEDI, DR_PCUT , DR_PEDIT,
         KC_NUM  , KC_PSLS , KC_PAST , DR_RDEL ,    KC_I    , DR_APETL, KC_O    ,
         KC_P7   , KC_P8   , KC_P9   , KC_SLSH ,    KC_LCBR , DR_SPLIT, KC_RCBR ,    KC_HOME ,           KC_END  ,
         KC_P4   , KC_P5   , KC_P6   ,              KC_J    , KC_K    , KC_L    ,
         KC_P1   , KC_P2   , KC_P3   , DR_SELCL,              KC_UP   ,                        KC_NO   ,
         KC_P0   ,           KC_PDOT ,              KC_LEFT , KC_DOWN , KC_RGHT
     ),
-    [_LAYERTHREE] = LAYOUT(
+    [_SHOTCUT] = LAYOUT(
+        // Shotcut
+        TO(_TRUCKSIM),      SC_UNDO ,              SC_CUT  , SC_COPY , SC_PSTE ,    KC_NO   , KC_NO   , KC_NO   ,
+        KC_NUM  , KC_PSLS , KC_PAST , KC_X    ,    KC_I    , KC_NO   , KC_O    ,
+        KC_P7   , KC_P8   , KC_P9   , KC_B    ,    KC_LCBR , KC_S    , KC_RCBR ,    KC_HOME ,           KC_END  ,
+        KC_P4   , KC_P5   , KC_P6   ,              KC_J    , KC_K    , KC_L    ,
+        KC_P1   , KC_P2   , KC_P3   , KC_PENT ,              SC_SKPL ,                        KC_NO   ,
+        KC_P0   ,           KC_PDOT ,              KC_LEFT , SC_SKPR , KC_RGHT
+    ),
+    [_TRUCKSIM] = LAYOUT(
         // Euro Truck Simulator
-        TO(3),              KC_ESC  ,              KC_P    , KC_O    , KC_L    ,    KC_M   , KC_HOME, KC_R   ,
+        TO(_FUNCTION),       KC_ESC  ,              KC_P    , KC_O    , KC_L    ,    KC_M   , KC_HOME, KC_R   ,
         KC_U    , KC_SLSH , KC_ASTR , KC_T    ,    KC_F7   , KC_F8   , KC_F9   ,
         KC_7    , KC_8    , KC_9    , KC_SPC  ,    KC_F4   , KC_F5   , KC_F6   ,    ET_STEA,          KC_MUTE,
         KC_4    , KC_5    , KC_6    ,              KC_F1   , KC_F2   , KC_F3   ,
         KC_1    , KC_2    , KC_3    , KC_ENT  ,              KC_UP   ,                       KC_NO  ,
         KC_E    ,           KC_DOT  ,              KC_LEFT , KC_DOWN , KC_RGHT
     ),
-    [_LAYERFOUR] = LAYOUT(
-        TO(0),              KC_NO   ,              RGB_RMOD, RGB_TOG , RGB_MOD ,    KC_NO   , QK_RBT  , QK_BOOT,
+    [_FUNCTION] = LAYOUT(
+        TO(_DEFAULT),       KC_NO   ,              RGB_RMOD, RGB_TOG , RGB_MOD ,    KC_NO   , QK_RBT  , QK_BOOT,
         KC_NO   , KC_NO   , KC_NO   , KC_NO   ,    KC_NO   , KC_NO   , KC_NO   ,
         WS_7    , WS_8    , WS_9    , KC_NO   ,    KC_NO   , KC_NO   , KC_NO   ,    RGB_TOG ,           KC_MUTE ,
         WS_4    , WS_5    , WS_6    ,              KC_NO   , KC_NO   , KC_NO   ,
@@ -96,13 +114,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
     // Encoder order: small right, small left, big
     // Default
-    [_LAYERONE] = {
+    [_DEFAULT] = {
         ENCODER_CCW_CW(KC_VOLD, KC_VOLU),
         ENCODER_CCW_CW(KC_PGUP, KC_PGDN),
         ENCODER_CCW_CW(KC_MS_WH_UP, KC_MS_WH_DOWN)
     },
     // DaVince Resolve
-    [_LAYERTWO] = {
+    [_RESOLVE] = {
         // Zoom out, zoom in
         ENCODER_CCW_CW(C(KC_MINS), C(KC_EQL)),
         // 1 s back, 1 s forward
@@ -110,12 +128,21 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
         // Frame back, frame forward
         ENCODER_CCW_CW(KC_LEFT, KC_RGHT)
     },
-    [_LAYERTHREE] = {
+    // Shotcut
+    [_SHOTCUT] = {
+        // Zoom out, zoom in
+        ENCODER_CCW_CW(KC_MINS, KC_PLUS),
+        // 1 s back, 1 s forward
+        ENCODER_CCW_CW(KC_PGUP, KC_PGDN),
+        // Frame back, frame forward
+        ENCODER_CCW_CW(KC_LEFT, KC_RGHT)
+    },
+    [_TRUCKSIM] = {
         ENCODER_CCW_CW(KC_VOLD, KC_VOLU),
         ENCODER_CCW_CW(KC_PGUP, KC_PGDN),
         ENCODER_CCW_CW(KC_MS_WH_UP, KC_MS_WH_DOWN)
     },
-    [_LAYERFOUR] = {
+    [_FUNCTION] = {
         ENCODER_CCW_CW(KC_VOLD, KC_VOLU),
         ENCODER_CCW_CW(RGB_RMOD, RGB_MOD),
         ENCODER_CCW_CW(KC_MS_WH_UP, KC_MS_WH_DOWN)

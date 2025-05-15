@@ -19,17 +19,20 @@ static void render_status(void) {
     oled_write_P(PSTR("\n"), false);
     oled_write_P(PSTR("Layer: "), false);
     switch (get_highest_layer(layer_state | default_layer_state)) {
-        case _LAYERONE:
+        case _DEFAULT:
             oled_write_P(PSTR("DEFAULT\n"), false);
             break;
-        case _LAYERTWO:
+        case _RESOLVE:
             oled_write_P(PSTR("RESOLVE\n"), false);
             break;
-        case _LAYERTHREE:
-            oled_write_P(PSTR("EURO TRUCK\n"), false);
+        case _SHOTCUT:
+            oled_write_P(PSTR("SHOTCUT\n"), false);
             break;
-        case _LAYERFOUR:
-            oled_write_P(PSTR("ADJUST\n"), false);
+        case _TRUCKSIM:
+            oled_write_P(PSTR("TRUCKSIM\n"), false);
+            break;
+        case _FUNCTION:
+            oled_write_P(PSTR("FUNCTION\n"), false);
             break;
         default:
             oled_write_P(PSTR("???\n"), false);
