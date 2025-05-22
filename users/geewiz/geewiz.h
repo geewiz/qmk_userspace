@@ -47,6 +47,7 @@ enum layer_names {
 #define ESC_NAV LT(_NAVI , KC_ESC)
 #define TAB_NAV LT(_NAVI, KC_TAB)
 #define O_NAV LT(_NAVI, KC_O)
+#define QUO_NAV LT(_NAVI, KC_QUOT)
 
 #define BSP_SYM LT(_SYMBOL, KC_BSPC)
 #define DEL_SYM LT(_SYMBOL, KC_DEL)
