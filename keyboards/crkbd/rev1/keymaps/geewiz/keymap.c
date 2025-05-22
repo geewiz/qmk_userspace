@@ -45,7 +45,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       U_UMLOE, KC_Z   , KC_X   , KC_C   , KC_D   , KC_V   ,                      KC_K   , KC_H   , KC_COMM, KC_DOT , KC_BSPC, KC_MINS,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          OS_LGUI, LY_NUMB, OS_LSFT,    KC_SPC , LY_SYMB, OS_LALT \
+                                          KC_LGUI, LY_NUMB, KC_LSFT,    KC_SPC , LY_SYMB, KC_LALT \
                                       //`--------------------------'  `--------------------------'
   ),
 #else
@@ -57,7 +57,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       U_UMLOE, KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   ,                      KC_N   , KC_M   , KC_COMM, KC_DOT , KC_BSPC, KC_MINS,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          LY_NUMB, LY_NAVI, KC_LSFT,    KC_SPC , LY_SYMB, XXXXXXX \
+                                          KC_LGUI, LY_NUMB, KC_LSFT,    KC_SPC , LY_SYMB, KC_LALT \
                                       //`--------------------------'  `--------------------------'
   ),
     #endif
