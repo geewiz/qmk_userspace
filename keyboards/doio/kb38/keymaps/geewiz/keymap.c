@@ -47,6 +47,10 @@ enum layers {
 #define SC_CUT  C(KC_X)
 #define SC_COPY C(KC_C)
 #define SC_PSTE C(KC_V)
+#define SC_FRZF C(S(KC_H)) // Freeze frame
+#define SC_DELC KC_BSPC // Delete clip
+#define SC_LIFT KC_Z // Lift clip
+#define SC_RDEL KC_X // Ripple delete
 
 // ETS2 keycodes
 #define ET_STEA S(KC_TAB)
@@ -76,7 +80,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_RESOLVE] = LAYOUT(
         // Davinci Resolve
         TO(_SHOTCUT),       DR_UNDO ,              KC_A    , KC_B    , KC_T    ,    DR_PMEDI, DR_PCUT , DR_PEDIT,
-        KC_NUM  , KC_PSLS , KC_PAST , DR_RDEL ,    KC_I    , DR_APETL, KC_O    ,
+        KC_NUM  , KC_BSPC , KC_PAST , DR_RDEL ,    KC_I    , DR_APETL, KC_O    ,
         KC_P7   , KC_P8   , KC_P9   , KC_SLSH ,    KC_LCBR , DR_SPLIT, KC_RCBR ,    KC_HOME ,           KC_END  ,
         KC_P4   , KC_P5   , KC_P6   ,              KC_J    , KC_K    , KC_L    ,
         KC_P1   , KC_P2   , KC_P3   , DR_SELCL,              KC_UP   ,                        KC_NO   ,
@@ -84,8 +88,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [_SHOTCUT] = LAYOUT(
         // Shotcut
-        TO(_TRUCKSIM),      SC_UNDO ,              SC_CUT  , SC_COPY , SC_PSTE ,    KC_NO   , KC_NO   , KC_NO   ,
-        KC_NUM  , KC_PSLS , KC_PAST , KC_X    ,    KC_I    , KC_NO   , KC_O    ,
+        TO(_TRUCKSIM),      SC_UNDO ,              SC_CUT  , SC_COPY , SC_PSTE ,    SC_FRZF , KC_NO   , KC_NO   ,
+        KC_NUM  , SC_DELC , SC_LIFT , SC_RDEL ,    KC_I    , KC_NO   , KC_O    ,
         KC_P7   , KC_P8   , KC_P9   , KC_B    ,    KC_LCBR , KC_S    , KC_RCBR ,    KC_HOME ,           KC_END  ,
         KC_P4   , KC_P5   , KC_P6   ,              KC_J    , KC_K    , KC_L    ,
         KC_P1   , KC_P2   , KC_P3   , KC_PENT ,              SC_SKPL ,                        KC_NO   ,
