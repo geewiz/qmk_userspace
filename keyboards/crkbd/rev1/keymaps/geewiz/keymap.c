@@ -76,13 +76,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_NAVI] = LAYOUT_split_3x6_3( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      _______, OS_RGUI, OS_RALT, OS_RCTL, OS_RSFT, KC_RGUI,                      KC_TAB , KC_ESC , SW_WIN , CW_TOGG, XXXXXXX, _______,\
+      XXXXXXX, OS_RGUI, OS_RALT, OS_RCTL, OS_RSFT, KC_RGUI,                      KC_TAB , KC_ESC , SW_WIN , CW_TOGG, XXXXXXX, XXXXXXX,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      _______, OS_LGUI, OS_LALT, OS_LCTL, OS_LSFT, KC_LGUI,                      KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, _______, _______,\
+      XXXXXXX, OS_LGUI, OS_LALT, OS_LCTL, OS_LSFT, XXXXXXX,                      KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, _______, XXXXXXX,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      _______, KC_UNDO, KC_CUT , KC_COPY, KC_PSTE, KC_INS ,                      KC_HOME, KC_PGDN, KC_PGUP, KC_END , KC_DEL , _______,\
+      XXXXXXX, KC_UNDO, KC_CUT , KC_COPY, KC_PSTE, KC_INS ,                      KC_HOME, KC_PGDN, KC_PGUP, KC_END , KC_DEL , XXXXXXX,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          _______, _______, _______,    KC_BSPC, KC_ENT , _______ \
+                                          XXXXXXX, XXXXXXX, XXXXXXX,    KC_BSPC, KC_ENT , XXXXXXX \
                                       //`--------------------------'  `--------------------------'
   ),
 
