@@ -63,9 +63,6 @@ LEADER_EXTERNS();
 #endif
 
 void matrix_scan_user(void) {
-#ifdef ACHORDION_ENABLE
-    achordion_task();
-#endif
 
 #ifdef LEADER_ENABLE
     LEADER_DICTIONARY() {
@@ -93,20 +90,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   if (record->event.pressed) { tap_timer = timer_read32(); }
 #endif
 
-#ifdef ACHORDION_ENABLE
-  if (!process_achordion(keycode, record)) { return false; }
-#endif
-
   update_swapper( &sw_win_active, KC_LALT, KC_TAB, SW_WIN, keycode, record);
-
-  switch (keycode) {
-    case U_SMCL:
-        if (record->event.pressed) return false;
-        toggle_smart_caps();
-        return false;
-  }
-
-  if (!process_smart_caps(keycode, record)) { return false; }
 
   return true;
 };
