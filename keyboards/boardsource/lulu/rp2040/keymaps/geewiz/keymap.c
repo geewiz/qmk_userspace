@@ -9,36 +9,33 @@
 #include "g/keymap_combo.h" // to make combo def dictionary work
 #endif
 
+enum {
+    TD_NEXT_PREV,
+    TD_VOLD_MUTE,
+};
+
+tap_dance_action_t tap_dance_actions[] = {
+    [TD_NEXT_PREV] = ACTION_TAP_DANCE_DOUBLE(KC_MNXT, KC_MPRV),
+    [TD_VOLD_MUTE] = ACTION_TAP_DANCE_DOUBLE(KC_VOLD, KC_MUTE),
+};
+
+#define TD_NXPR TD(TD_NEXT_PREV)
+#define TD_VDMT TD(TD_VOLD_MUTE)
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-#if defined(GEEWIZ_COLEMAK)
-  [_DEFAULT] = LAYOUT( \
-/* ,-----------------------------------------------------.                   ,-----------------------------------------------------. */
-     XXXXXXX, KC_1   , KC_2   , KC_3   , KC_4   , KC_5   ,                     KC_6   , KC_7   , KC_8   , KC_9   , KC_0   , XXXXXXX, \
-/* |--------+--------+--------+--------+--------+--------|                   |--------+--------+--------+--------+--------+--------| */
-     XXXXXXX, KC_Q   , KC_W   , KC_F   , KC_P   , KC_B   ,                     KC_J   , KC_L   , KC_U   , KC_Y   , KC_BSPC, XXXXXXX, \
-/* |--------+--------+--------+--------+--------+--------|                   |--------+--------+--------+--------+--------+--------| */
-     XXXXXXX, KC_A   , KC_R   , KC_S   , KC_T   , KC_G   ,                     KC_M   , KC_N   , KC_E   , KC_I   , O_NAV  , XXXXXXX, \
-/* |--------+--------+--------+--------+--------+--------|--------. .--------|--------+--------+--------+--------+--------+--------| */
-     XXXXXXX, KC_Z   , KC_X   , KC_C   , KC_D   , KC_V   , KC_MUTE,   KC_HOME, KC_K   , KC_H   , KC_COMM, KC_DOT , KC_SLSH, XXXXXXX, \
-/* |--------+--------+--------+--------+--------+--------/-------/   \-------\--------+--------+--------+--------+--------+--------| */
-                              XXXXXXX, LY_MOUS, LY_NUMB, KC_LSFT,       KC_SPC , LY_SYMB, LY_MEDI, XXXXXXX \
-/*                          |--------+--------+--------|--------/     \--------|--------+--------+--------|                          */
-  ),
-#else
   [_DEFAULT] = LAYOUT( \
 /* ,-----------------------------------------------------.                   ,-----------------------------------------------------. */
      XXXXXXX, KC_1   , KC_2   , KC_3   , KC_4   , KC_5   ,                     KC_6   , KC_7   , KC_8   , KC_9   , KC_0   , XXXXXXX, \
 /* |--------+--------+--------+--------+--------+--------|                   |--------+--------+--------+--------+--------+--------| */
      XXXXXXX, KC_Q   , KC_W   , KC_E   , KC_R   , KC_T   ,                     KC_Y   , KC_U   , KC_I   , KC_O   , KC_P   , XXXXXXX, \
 /* |--------+--------+--------+--------+--------+--------|                   |--------+--------+--------+--------+--------+--------| */
-     XXXXXXX, KC_A   , KC_S   , KC_D   , KC_F   , KC_G   ,                     KC_H   , KC_J   , KC_K   , KC_L   , BSP_NAV, XXXXXXX, \
+     XXXXXXX, DH_A   , DH_S   , DH_D   , DH_F   , KC_G   ,                     KC_H   , DH_J   , DH_K   , DH_L   , DH_SCLN, XXXXXXX, \
 /* |--------+--------+--------+--------+--------+--------|--------. .--------|--------+--------+--------+--------+--------+--------| */
      XXXXXXX, KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   , KC_MUTE,   KC_HOME, KC_N   , KC_M   , KC_COMM, KC_DOT , KC_SLSH, XXXXXXX, \
 /* |--------+--------+--------+--------+--------+--------/-------/   \-------\--------+--------+--------+--------+--------+--------| */
-                              XXXXXXX, LY_MOUS, LY_NUMB, KC_LSFT,       KC_SPC , LY_SYMB, LY_MEDI, XXXXXXX \
+                              XXXXXXX, XXXXXXX, SPC_NAV, ESC_NUM,       ENT_MSE, BSP_SYM, XXXXXXX, XXXXXXX \
 /*                          |--------+--------+--------|--------/     \--------|--------+--------+--------|                          */
   ),
-#endif
 
   [_GAME] = LAYOUT( \
 /* ,-----------------------------------------------------.                   ,-----------------------------------------------------. */
@@ -56,57 +53,57 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_NAVI] = LAYOUT( \
 /* ,-----------------------------------------------------.                   ,-----------------------------------------------------. */
-     _______, _______, _______, _______, _______, _______,                     _______, _______, _______, _______, _______, _______, \
+     XXXXXXX, _______, _______, _______, _______, _______,                     _______, _______, _______, _______, _______, XXXXXXX, \
 /* |--------+--------+--------+--------+--------+--------|                   |--------+--------+--------+--------+--------+--------| */
-     _______, OS_RGUI, OS_RALT, OS_RCTL, OS_RSFT, KC_RGUI,                     KC_TAB , KC_ESC , SW_WIN , CW_TOGG, XXXXXXX, XXXXXXX, \
+     XXXXXXX, OS_RGUI, OS_RALT, OS_RCTL, OS_RSFT, XXXXXXX,                     CW_TOGG, U_CUT  , U_CPY  , U_PST  , U_UND  , SW_WIN , \
 /* |--------+--------+--------+--------+--------+--------|                   |--------+--------+--------+--------+--------+--------| */
-     _______, OS_LGUI, OS_LALT, OS_LCTL, OS_LSFT, KC_LGUI,                     KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, _______, XXXXXXX, \
+     XXXXXXX, OS_LGUI, OS_LALT, OS_LCTL, OS_LSFT, XXXXXXX,                     KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, KC_TAB , XXXXXXX, \
 /* |--------+--------+--------+--------+--------+--------|--------. .--------|--------+--------+--------+--------+--------+--------| */
-     _______, U_UND  , U_CUT  , U_CPY  , U_PST  , KC_INS , XXXXXXX,   XXXXXXX, KC_HOME, KC_PGDN, KC_PGUP, KC_END , KC_DEL , XXXXXXX, \
+     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_INS , XXXXXXX,   XXXXXXX, KC_HOME, KC_PGDN, KC_PGUP, KC_END , KC_DEL , XXXXXXX, \
 /* |--------+--------+--------+--------+--------+--------/-------/   \-------\--------+--------+--------+--------+--------+--------| */
-                              XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,       KC_BSPC, KC_ENT , XXXXXXX, XXXXXXX \
+                              _______, _______, _______, _______,       _______, _______, _______, _______ \
 /*                          |--------+--------+--------|--------/     \--------|--------+--------+--------|                          */
   ),
 
   [_SYMBOL] = LAYOUT( \
 /* ,-----------------------------------------------------.                   ,-----------------------------------------------------. */
-     _______, _______, _______, _______, _______, _______,                     _______, _______, _______, _______, _______, _______, \
+     XXXXXXX, _______, _______, _______, _______, _______,                     _______, _______, _______, _______, _______, XXXXXXX, \
 /* |--------+--------+--------+--------+--------+--------|                   |--------+--------+--------+--------+--------+--------| */
-     _______, KC_LCBR, KC_AMPR, KC_ASTR, KC_PIPE, KC_RCBR,                     KC_TILD, KC_QUOT, KC_DQUO, KC_EQL , KC_GRV , XXXXXXX, \
+     XXXXXXX, KC_LCBR, KC_AMPR, KC_ASTR, KC_PIPE, KC_RCBR,                     XXXXXXX, KC_QUOT, KC_DQUO, XXXXXXX, KC_GRV , XXXXXXX, \
 /* |--------+--------+--------+--------+--------+--------|                   |--------+--------+--------+--------+--------+--------| */
-     _______, KC_LPRN, KC_DLR , KC_PERC, KC_CIRC, KC_RPRN,                     XXXXXXX, KC_MINS, KC_PLUS, KC_LABK, KC_RABK, XXXXXXX, \
+     KC_LABK, KC_LPRN, KC_DLR , KC_PERC, KC_CIRC, KC_RPRN,                     KC_TILD, KC_MINS, KC_PLUS, KC_EQL , KC_QUES, KC_RABK, \
 /* |--------+--------+--------+--------+--------+--------|--------. .--------|--------+--------+--------+--------+--------+--------| */
-     _______, KC_LBRC, KC_EXLM, KC_AT  , KC_HASH, KC_RBRC, XXXXXXX,   XXXXXXX, XXXXXXX, KC_UNDS, KC_SCLN, KC_COLN, KC_BSLS, XXXXXXX, \
+     XXXXXXX, KC_LBRC, KC_EXLM, KC_AT  , KC_HASH, KC_RBRC, XXXXXXX,   XXXXXXX, XXXXXXX, KC_UNDS, KC_SCLN, KC_COLN, KC_BSLS, XXXXXXX, \
 /* |--------+--------+--------+--------+--------+--------/-------/   \-------\--------+--------+--------+--------+--------+--------| */
-                              XXXXXXX, XXXXXXX, LY_ADJT, XXXXXXX,       XXXXXXX, _______, XXXXXXX, XXXXXXX \
+                              _______, _______, _______, _______,       _______, _______, _______, _______ \
 /*                          |--------+--------+--------|--------/     \--------|--------+--------+--------|                          */
   ),
 
   [_NUMBER] = LAYOUT( \
 /* ,-----------------------------------------------------.                   ,-----------------------------------------------------. */
-     _______, _______, _______, _______, _______, _______,                     _______, _______, _______, _______, _______, _______, \
+     XXXXXXX, _______, _______, _______, _______, _______,                     _______, _______, _______, _______, _______, XXXXXXX, \
 /* |--------+--------+--------+--------+--------+--------|                   |--------+--------+--------+--------+--------+--------| */
-     _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     KC_ASTR, KC_7   , KC_8   , KC_9   , KC_SLSH, XXXXXXX, \
+     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     KC_ASTR, KC_7   , KC_8   , KC_9   , KC_SLSH, XXXXXXX, \
 /* |--------+--------+--------+--------+--------+--------|                   |--------+--------+--------+--------+--------+--------| */
-     _______, OS_LGUI, OS_LALT, OS_LCTL, OS_LSFT, XXXXXXX,                     KC_MINS, KC_4   , KC_5   , KC_6   , KC_0   , XXXXXXX, \
+     XXXXXXX, OS_LGUI, OS_LALT, OS_LCTL, OS_LSFT, XXXXXXX,                     KC_MINS, KC_4   , KC_5   , KC_6   , KC_0   , XXXXXXX, \
 /* |--------+--------+--------+--------+--------+--------|--------. .--------|--------+--------+--------+--------+--------+--------| */
-     _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX, KC_PLUS, KC_1   , KC_2   , KC_3   , KC_DOT , XXXXXXX, \
+     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX, KC_PLUS, KC_1   , KC_2   , KC_3   , KC_DOT , XXXXXXX, \
 /* |--------+--------+--------+--------+--------+--------/-------/   \-------\--------+--------+--------+--------+--------+--------| */
-                              XXXXXXX, XXXXXXX, _______, XXXXXXX,       KC_BSPC, LY_ADJT, XXXXXXX, XXXXXXX \
+                              _______, _______, _______, _______,       _______, _______, _______, _______ \
 /*                          |--------+--------+--------|--------/     \--------|--------+--------+--------|                          */
   ),
 
   [_MOUSE] = LAYOUT( \
 /* ,-----------------------------------------------------.                   ,-----------------------------------------------------. */
-     _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
+     XXXXXXX, MS_WHLL, MS_WHLU, MS_UP  , MS_WHLD, MS_WHLR,                     _______, _______, _______, KC_LGUI, KC_LALT, XXXXXXX, \
 /* |--------+--------+--------+--------+--------+--------|                   |--------+--------+--------+--------+--------+--------| */
-     _______, WKSP1  , WKSP2  , WKSP3  , WKSP4  , WKSP5  ,                     WKSP6  , WKSP7  , WKSP8  , WKSP9  , WKSP0  , XXXXXXX, \
+     XXXXXXX, _______, MS_LEFT, MS_DOWN, MS_RGHT, _______,                     _______, MS_BTN1, MS_BTN2, MS_BTN3, KC_LCTL, XXXXXXX, \
 /* |--------+--------+--------+--------+--------+--------|                   |--------+--------+--------+--------+--------+--------| */
-     _______, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,                     MS_LEFT, MS_DOWN, MS_UP  , MS_RGHT, XXXXXXX, XXXXXXX, \
+     XXXXXXX, _______, _______, _______, _______, _______,                     _______, _______, _______, _______, KC_LSFT, XXXXXXX, \
 /* |--------+--------+--------+--------+--------+--------|--------. .--------|--------+--------+--------+--------+--------+--------| */
-     _______, U_UND  , U_CUT  , U_CPY  , U_PST  , XXXXXXX, XXXXXXX,   XXXXXXX, MS_WHLL, MS_WHLD, MS_WHLU, MS_WHLR, XXXXXXX, XXXXXXX, \
+     XXXXXXX, _______, _______, _______, _______, _______, XXXXXXX,   XXXXXXX, _______, _______, _______, _______, _______, XXXXXXX, \
 /* |--------+--------+--------+--------+--------+--------/-------/   \-------\--------+--------+--------+--------+--------+--------| */
-                              XXXXXXX, _______, XXXXXXX, XXXXXXX,       MS_BTN1, MS_BTN3, MS_BTN2, XXXXXXX \
+                               _______, _______, _______, _______,       _______, _______, _______, _______ \
 /*                          |--------+--------+--------|--------/     \--------|--------+--------+--------|                          */
   ),
 
@@ -128,16 +125,31 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* ,-----------------------------------------------------.                   ,-----------------------------------------------------. */
      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
 /* |--------+--------+--------+--------+--------+--------|                   |--------+--------+--------+--------+--------+--------| */
-     XXXXXXX, KC_F12 , KC_F7  , KC_F8  , KC_F9  , KC_PAUS,                     TG_GAME, UG_TOGG, UG_NEXT, XXXXXXX, XXXXXXX, XXXXXXX, \
+     XXXXXXX, KC_F12 , KC_F7  , KC_F8  , KC_F9  , KC_PAUS,                     TD_NXPR, TD_VDMT, KC_MPLY, KC_VOLU, UG_TOGG, XXXXXXX, \
 /* |--------+--------+--------+--------+--------+--------|                   |--------+--------+--------+--------+--------+--------| */
      XXXXXXX, KC_F11 , KC_F4  , KC_F5  , KC_F6  , KC_PSCR,                     XXXXXXX, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, XXXXXXX, \
 /* |--------+--------+--------+--------+--------+--------|--------. .--------|--------+--------+--------+--------+--------+--------| */
-     XXXXXXX, KC_F10 , KC_F1  , KC_F2  , KC_F3  , KC_SCRL, XXXXXXX,   XXXXXXX, XXXXXXX, UG_HUEU, UG_SATU, UG_VALU, UG_SPDU, XXXXXXX, \
+     XXXXXXX, KC_F10 , KC_F1  , KC_F2  , KC_F3  , KC_SCRL, XXXXXXX,   XXXXXXX, UG_NEXT, UG_HUEU, UG_SATU, UG_VALU, UG_SPDU, XXXXXXX, \
 /* |--------+--------+--------+--------+--------+--------/-------/   \-------\--------+--------+--------+--------+--------+--------| */
-                              XXXXXXX, XXXXXXX, _______, QK_BOOT,       QK_BOOT, _______, XXXXXXX, XXXXXXX \
+                              XXXXXXX, _______, QK_BOOT, _______,       _______, QK_BOOT, _______, XXXXXXX \
 /*                          |--------+--------+--------|--------/     \--------|--------+--------+--------|                          */
   ),
 };
+
+layer_state_t layer_state_set_user(layer_state_t state) {
+  return update_tri_layer_state(state, _NUMBER, _MOUSE, _ADJUST);
+}
+
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+  switch (keycode) {
+    case TD_NXPR:
+      return 200;
+    case TD_VDMT:
+      return 150;
+    default:
+      return TAPPING_TERM;
+  }
+}
 
 #ifdef ACHORDION_ENABLE
 // Exceptions for the opposite hands rule
@@ -157,6 +169,10 @@ uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
     // Standard QMK hold behaviour for thumb keys
     case ESC_MED:
     case BSP_NAV:
+    case ENT_MSE:
+    case ESC_NUM:
+    case SPC_NAV:
+    case BSP_SYM:
     case TAB_MSE:
     case ENT_ADJ:
     case SPC_SYM:
@@ -164,7 +180,7 @@ uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
       return 0;
   }
 
-  return 800;  // Reasonable default timeout
+  return 280;  // Reasonable default timeout
 }
 #endif
 
@@ -175,11 +191,10 @@ static void render_status(void) {
 
     switch (get_highest_layer(layer_state)) {
         case _DEFAULT: oled_write_P(PSTR("DEFAULT\n"), false); break;
-        case _COLEMAK: oled_write_P(PSTR("COLEMAK\n"), false); break;
         case _SYMBOL: oled_write_P(PSTR("SYMBOL\n"), false); break;
         case _NAVI: oled_write_P(PSTR("NAVIGATION\n"), false); break;
         case _NUMBER: oled_write_P(PSTR("NUMBER\n"), false); break;
-        case _ADJUST: oled_write_P(PSTR("ADJUST\n"), false); break;
+        case _ADJUST: oled_write_P(PSTR("FUNCTION\n"), false); break;
         case _MEDIA: oled_write_P(PSTR("MEDIA\n"), false); break;
         case _MOUSE: oled_write_P(PSTR("MOUSE\n"), false); break;
         case _GAME: oled_write_P(PSTR("GAME\n"), false); break;

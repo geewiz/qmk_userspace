@@ -44,6 +44,7 @@ enum layer_names {
 
 // Layer taps
 #define BSP_NAV LT(_NAVI, KC_BSPC)
+#define SPC_NAV LT(_NAVI, KC_SPC)
 #define ESC_NAV LT(_NAVI , KC_ESC)
 #define TAB_NAV LT(_NAVI, KC_TAB)
 #define O_NAV LT(_NAVI, KC_O)
@@ -61,11 +62,13 @@ enum layer_names {
 #define DEL_NUM LT(_NUMBER, KC_DEL)
 #define ENT_NUM LT(_NUMBER, KC_ENT)
 #define SPC_NUM LT(_NUMBER, KC_SPC)
+#define ESC_NUM LT(_NUMBER, KC_ESC)
 
 #define ENT_MED LT(_MEDIA, KC_ENT)
 #define ESC_MED LT(_MEDIA, KC_ESC)
 
 #define TAB_MSE LT(_MOUSE, KC_TAB)
+#define ENT_MSE LT(_MOUSE, KC_ENT)
 
 // Mod taps
 #define BSP_SFT LSFT_T(KC_BSPC)
