@@ -19,7 +19,7 @@ void persistent_default_layer_set(uint16_t default_layer) {
 * Mod-tap, home row mods
 ***/
 
-#ifdef TAPPING_TERM_PER_KEY
+#if defined(TAPPING_TERM_PER_KEY) && !defined(GEEWIZ_KEYMAP_TAPPING_TERM)
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         // outer home row
