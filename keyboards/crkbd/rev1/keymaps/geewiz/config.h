@@ -22,6 +22,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #undef GEEWIZ_COLEMAK
 
+#define TAPPING_TERM 280
+#define QUICK_TAP_TERM 175
+#define TAPPING_TERM_PER_KEY
+#define GEEWIZ_KEYMAP_TAPPING_TERM
+
 #define EE_HANDS
 #define SPLIT_USB_DETECT
 

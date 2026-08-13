@@ -47,9 +47,6 @@ static void render_status(void) {
             case _DEFAULT:
                 oled_write_P(PSTR("DEFAULT\n"), false);
                 break;
-            case _GAME:
-                oled_write_P(PSTR("GAME\n"), false);
-                break;
             case _NAVI:
                 oled_write_P(PSTR("NAVI\n"), false);
                 break;
@@ -58,9 +55,6 @@ static void render_status(void) {
                 break;
             case _SYMBOL:
                 oled_write_P(PSTR("SYMBOL\n"), false);
-                break;
-            case _MEDIA:
-                oled_write_P(PSTR("MEDIA\n"), false);
                 break;
             case _MOUSE:
                 oled_write_P(PSTR("MOUSE\n"), false);
