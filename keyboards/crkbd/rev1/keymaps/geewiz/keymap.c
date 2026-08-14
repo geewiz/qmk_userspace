@@ -43,6 +43,13 @@ tap_dance_action_t tap_dance_actions[] = {
 #define TD_NXPR TD(TD_NEXT_PREV)
 #define TD_VDMT TD(TD_VOLD_MUTE)
 
+const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM = LAYOUT_split_3x6_3( \
+    '*', 'L', 'L', 'L', 'L', 'L',                      'R', 'R', 'R', 'R', 'R', '*', \
+    '*', 'L', 'L', 'L', 'L', 'L',                      'R', 'R', 'R', 'R', 'R', '*', \
+    '*', 'L', 'L', 'L', 'L', 'L',                      'R', 'R', 'R', 'R', 'R', '*', \
+                                           '*', '*', '*',    '*', '*', '*' \
+                                       );
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_DEFAULT] = LAYOUT_split_3x6_3( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
@@ -131,30 +138,3 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
       return TAPPING_TERM;
   }
 }
-
-#ifdef ACHORDION_ENABLE
-// Exceptions for the opposite hands rule
-bool achordion_chord(uint16_t tap_hold_keycode,
-                     keyrecord_t* tap_hold_record,
-                     uint16_t other_keycode,
-                     keyrecord_t* other_record) {
-  // Allow same-hand holds for thumb keys
-  if (tap_hold_record->event.key.row >= 3) { return true; }
-
-  // Otherwise, follow the opposite hands rule.
-  return achordion_opposite_hands(tap_hold_record, other_record);
-}
-
-uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
-  switch (tap_hold_keycode) {
-    // Standard QMK hold behaviour for thumb keys
-    case ESC_NUM:
-    case SPC_NAV:
-    case ENT_MSE:
-    case BSP_SYM:
-      return 0;
-  }
-
-  return 280;  // Reasonable default timeout
-}
-#endif

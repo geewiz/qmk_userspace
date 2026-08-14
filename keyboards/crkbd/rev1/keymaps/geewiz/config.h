@@ -24,6 +24,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define TAPPING_TERM 280
 #define QUICK_TAP_TERM 175
+#define CHORDAL_HOLD
+#define PERMISSIVE_HOLD
 #define TAPPING_TERM_PER_KEY
 #define GEEWIZ_KEYMAP_TAPPING_TERM
 

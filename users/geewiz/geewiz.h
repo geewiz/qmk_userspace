@@ -1,9 +1,5 @@
 #pragma once
 
-#if defined(ACHORDION_ENABLE)
-#include "features/achordion.h"
-#endif
-
 #include "features/swapper.h"
 #include "features/smart_caps.h"
 
