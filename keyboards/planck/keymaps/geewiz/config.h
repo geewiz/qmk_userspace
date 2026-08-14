@@ -1,3 +1,10 @@
 // Settings for rotary encoder
 #define TAP_CODE_DELAY 50
 #define ENCODER_RESOLUTION 2
+
+#define TAPPING_TERM 280
+#define QUICK_TAP_TERM 175
+#define TAPPING_TERM_PER_KEY
+#define GEEWIZ_KEYMAP_TAPPING_TERM
+#define CHORDAL_HOLD
+#define PERMISSIVE_HOLD
