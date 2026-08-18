@@ -26,7 +26,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_Q   , KC_W   , KC_E   , KC_R   , KC_T   , WKSPPRE, WKSPNXT, KC_Y   , KC_U   , KC_I   , KC_O   , KC_P   ,
       DH_A   , DH_S   , DH_D   , DH_F   , KC_G   , WINLEFT, WINRGHT, KC_H   , DH_J   , DH_K   , DH_L   , DH_SCLN,
       KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   , _______ , _______ , KC_N   , KC_M   , KC_COMM, KC_DOT , KC_SLSH,
-      KC_MUTE, XXXXXXX, KC_LGUI, XXXXXXX, ESC_NUM , SPC_NAV , ENT_MSE , BSP_SYM , XXXXXXX, KC_LCTL, XXXXXXX, XXXXXXX
+      KC_MUTE, XXXXXXX, KC_LGUI, XXXXXXX, SPC_NAV , ESC_NUM , ENT_MSE , BSP_SYM , XXXXXXX, KC_LCTL, XXXXXXX, XXXXXXX
     ),
 
     [_NAVI] = LAYOUT_planck_grid(
